@@ -83,13 +83,13 @@
                     <div id="table-generator">
                         <div class="flex flex-stack">
                             <div class="input-col">
-                                <input id="set-cols" name="cols" type="number" value="4" min="1" max="6"
-                                       oninput="this.value = Math.abs(this.value)" pattern="^[1-6]\d*$">
+                                <input id="set-cols" name="cols" type="number" value="6" min="1" max="6"
+                                       oninput="inputCheck(this)" >
                                 <label for="set-cols">Set Columns</label>
                             </div>
                             <div class="input-col">
-                                <input id="set-rows" name="rows" type="number" value="4" min="1" max="6"
-                                       oninput="this.value = Math.abs(this.value)" pattern="^[1-6]\d*$">
+                                <input id="set-rows" name="rows" type="number" value="6" min="1" max="6"
+                                       oninput="inputCheck(this)" >
                                 <label for="set-rows">Set Rows</label>
                             </div>
                         </div>

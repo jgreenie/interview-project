@@ -1,19 +1,37 @@
+function inputCheck(el) {
+    value = Math.abs(el.value);
+
+    if(value < 1) {
+        el.value = '';
+    } else {
+        if(value > 6) {
+            el.value = '';
+        } else {
+            el.value = value;
+        }
+    }
+}
+
 function generateTable() {
     removeTable();
     var parentElement = document.getElementById('table-content'),
-        // add 1 row & col for headers
         headers = 1,
-        setRow = parseInt(document.getElementById('set-rows').value, 10) + headers,
-        setCol = parseInt(document.getElementById('set-cols').value, 10) + headers,
+        inputRow = document.getElementById('set-rows'),
+        inputCol = document.getElementById('set-cols'),
         table = document.createElement('table'),
-        genButton = document.getElementById('generate'),
         resetButton = document.getElementById('reset');
 
-    if(setCol === 1 || setRow === 1) {
-        resetTable();
-        return;
+    if(!inputRow.value) {
+        inputRow.value = 6;
     }
 
+    if(!inputCol.value) {
+        inputCol.value = 6;
+    }
+
+
+    var setRow = parseInt(inputRow.value, 10) + headers,
+        setCol = parseInt(inputCol.value, 10) + headers;
     parentElement.appendChild(table);
     table.innerHTML = "<thead><tr id='thead'></tr></thead><tbody id='tbody'></tbody>";
 
