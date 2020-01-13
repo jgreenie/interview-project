@@ -16,15 +16,15 @@
                 <h2 class="section-heading">About me</h2>
                 <div class="flex flex-stack">
                     <div class="content-box no-margin flex-2-5 text-right">
-                        <img class="thumbnail" alt="Joshua Green | Web Developer" src="img/josh-thumb-lrg.jpg">
+                        <img class="thumbnail" alt="Joshua Green | Web Developer" src="img/josh-thumb-light.jpg">
                     </div>
                     <div class="content-box flex-3-5 text-left">
                         <h1 class="small-heading no-margin">Joshua Green</h1>
                         <span>Web Developer</span>
-                        <p class="large-text">I am a Utah local who has been developing websites for local startups and global
-                            corporations. I have spent the majority of my career working in agencies and occasionally
-                            have been able to work on a few clients I really believed in, and I am looking to integrate
-                            with a team and product I can get more involved with.</p>
+                        <p class="large-text">I am a developer who has been creating web projects for last 5 years. Born
+                            and raised in Utah I grew up playing saxophone and ballroom dancing. Later I joined the
+                            debate team and dabbled in some biotechnology through highschool and a year of college
+                            before getting into programming and starting my career. </p>
                     </div>
                 </div>
 
@@ -37,31 +37,32 @@
         <div class="container container-full">
             <h2 class="section-heading">Learn More About Josh</h2>
 
-            <div class="flex flex-stack">
+            <div class="flex flex-stack flex-wrap">
 
                 <div class="content-box flex-1-3">
                     <span class="icon-bug large-icons"></span>
-                    <h3>Joshua Green</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h5>What makes you nervous?</h5>
+                    <p>Creepy crawlers make me itch - from spiders to snakes, but what really makes me nervous are
+                        heights and being unprepared in front of a crowd. Learning to snowboard has been a really fun
+                        because I get to fall down mountains in front of anyone on their way to the top.</p>
                 </div>
                 <div class="content-box flex-1-3">
                     <span class="icon-trophy large-icons"></span>
-                    <h3>Joshua Green</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h5>What has been your greatest moment as a developer?</h5>
+                    <p>Fully capturing complex animations that really push my skills to the limit are some of the most
+                        satisfying projects. One of the most complex projects I have worked on utilized GASP, Waypoints,
+                        and custom animations to build a complex scroll-based <a
+                                href="http://digicert.com/history-innovation-timeline" target="_blank">interactive
+                            timeline</a>.
+                    </p>
                 </div>
                 <div class="content-box flex-1-3">
                     <span class="icon-users large-icons"></span>
-                    <h3>Joshua Green</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h5>What is your favorite thing from pop culture?</h5>
+                    <p>Lately, I have been really enjoying The Witcher on Netflix after having enjoyed the video game.
+                        I need to read the books still, but my favorite book series of all is the Wheel of Time, which
+                        recently got picked up by Amazon and started filming at the end of 2019, cant wait to see how it
+                        turns out.</p>
                 </div>
             </div>
         </div>
@@ -69,58 +70,38 @@
 
 
     <section id="section-3" class="section bg-gradient-3">
-        <div class="container">
+        <div class="container container-full">
             <h2 class="section-heading">Table Generator</h2>
 
             <div id="table-wrapper">
                 <div id="table-nav">
-                    <div id="table-generator">
-                        <input class="columns" name="columns" type="number" value="6">
-                        <input class="rows" name="rows" type="number" value="6">
-                        <input class="submit" type="submit">
-                        <button class="reset" value="reset">Reset <span class="icon-spinner11"></span></button>
-                    </div>
-                    <div class="reset-generator">
-
+                    <div id="table-generator" class="flex-stack">
+                        <div class="input-col">
+                            <input id="set-cols" name="cols" type="number" value="4" min="1" max="6">
+                            <label for="set-cols">Set Columns</label>
+                        </div>
+                        <div class="input-col">
+                            <input id="set-rows" name="rows" type="number" value="4" min="1" max="6">
+                            <label for="set-rows">Set Rows</label>
+                        </div>
+                        <button id="generate" value="generate" onclick="generateTable()"><b>Create</b><span
+                                class="icon-forward"></span></button>
+                        <button id="reset" style="display: none;" value="reset" onclick="resetTable()"><b>Reset</b><span
+                                class="icon-spinner11"></span></button>
                     </div>
                 </div>
                 <div id="table-content">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>1</th>
-                            <th>1</th>
-                            <th>1</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>1 x 1 = 1</td>
-                            <td>1 x 1 = 1</td>
-                            <td>1 x 1 = 1</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>1 x 1 = 1</td>
-                            <td>1 x 1 = 1</td>
-                            <td>1 x 1 = 1</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>1 x 1 = 1</td>
-                            <td>1 x 1 = 1</td>
-                            <td>1 x 1 = 1</td>
-                        </tr>
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
         </div>
     </section>
 
 </main>
-
+<footer class="text-center">
+    <p>Joshua Green | <a href="mailto:josh.c.green93@gmail.com">Email</a> | <a href="http://dev.joshua.green"
+                                                                               target="_blank">Portfolio</a> | <a
+            href="tel:801-885-2103">801-885-2103</a></p>
+</footer>
 </body>
 </html>
