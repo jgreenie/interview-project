@@ -259,7 +259,7 @@ section#section-1:after {
     right: -2px;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    filter: blur(2px);
+    /* filter: blur(2px); */
 }
 
 @media screen and (min-width: 600px) {
@@ -332,7 +332,7 @@ section#section-1 .frosted-bg:after {
     left: -2px;
     right: -2px;
     z-index: -2;
-    filter: blur(0px);
+    filter: blur(2px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
 }
