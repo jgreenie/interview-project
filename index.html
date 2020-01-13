@@ -11,38 +11,36 @@
 <main id="site-main">
 
     <section id="section-1" class="section">
-        <div class="container">
-            <h2 class="section-heading">About me</h2>
-            <div class="flex flex-wrap">
-                <div class="content-box flex-1-4">
+        <div class="frosted-bg">
+            <div class="container">
+                <h2 class="section-heading">About me</h2>
+                <div class="flex flex-stack">
+                    <div class="content-box no-margin flex-2-5 text-right">
+                        <img class="thumbnail" alt="Joshua Green | Web Developer" src="img/josh-thumb-lrg.jpg">
+                    </div>
+                    <div class="content-box flex-3-5 text-left">
+                        <h1 class="small-heading no-margin">Joshua Green</h1>
+                        <span>Web Developer</span>
+                        <p class="large-text">I am a Utah local who has been developing websites for local startups and global
+                            corporations. I have spent the majority of my career working in agencies and occasionally
+                            have been able to work on a few clients I really believed in, and I am looking to integrate
+                            with a team and product I can get more involved with.</p>
+                    </div>
+                </div>
 
-                    <img class="thumbnail" alt="Joshua Green | Web Developer" src="img/josh-thumb.jpg">
-                    <h1 class="small-heading">Joshua Green</h1>
-                    <span>Web Developer</span>
-                </div>
-                <div class="content-box flex-3-4">
-                    <p>I am a Utah local who has been developing websites for local startups and global
-                        corporations. I
-                        have spent the majority of my career working in agencies and occasionally have been able
-                        to work
-                        on a few clients I really believed in, and I am looking to integrate with a team and
-                        product I
-                        can get more involved with.</p>
-                </div>
             </div>
-
         </div>
     </section>
 
 
     <section id="section-2" class="section bg-gradient-2">
         <div class="container container-full">
-            <div class="flex flex-wrap">
+            <h2 class="section-heading">Learn More About Josh</h2>
 
-                <h2 class="section-heading  flex-1">Learn More About Josh</h2>
+            <div class="flex flex-stack">
 
                 <div class="content-box flex-1-3">
-                    <img src="img/josh-thumb.jpg">
+                    <span class="icon-bug large-icons"></span>
                     <h3>Joshua Green</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -50,7 +48,7 @@
                         voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
                 <div class="content-box flex-1-3">
-                    <img src="img/josh-thumb.jpg">
+                    <span class="icon-trophy large-icons"></span>
                     <h3>Joshua Green</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -58,7 +56,7 @@
                         voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
                 <div class="content-box flex-1-3">
-                    <img src="img/josh-thumb.jpg">
+                    <span class="icon-users large-icons"></span>
                     <h3>Joshua Green</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -72,9 +70,52 @@
 
     <section id="section-3" class="section bg-gradient-3">
         <div class="container">
-            <div id="table-generator">
-                <div id="table-nav"></div>
-                <div id="table-content"></div>
+            <h2 class="section-heading">Table Generator</h2>
+
+            <div id="table-wrapper">
+                <div id="table-nav">
+                    <div id="table-generator">
+                        <input class="columns" name="columns" type="number" value="6">
+                        <input class="rows" name="rows" type="number" value="6">
+                        <input class="submit" type="submit">
+                        <button class="reset" value="reset">Reset <span class="icon-spinner11"></span></button>
+                    </div>
+                    <div class="reset-generator">
+
+                    </div>
+                </div>
+                <div id="table-content">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>1</th>
+                            <th>1</th>
+                            <th>1</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>1 x 1 = 1</td>
+                            <td>1 x 1 = 1</td>
+                            <td>1 x 1 = 1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>1 x 1 = 1</td>
+                            <td>1 x 1 = 1</td>
+                            <td>1 x 1 = 1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>1 x 1 = 1</td>
+                            <td>1 x 1 = 1</td>
+                            <td>1 x 1 = 1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>

@@ -2,15 +2,65 @@
 Owner: Joshua Green
 Description: Stylesheet for ClearLink Interview Project
 */
-
 /* fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
 
+/*technically its a font not a library*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?bgfcy4');
+    src:  url('../fonts/icomoon.eot?bgfcy4#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?bgfcy4') format('truetype'),
+    url('../fonts/icomoon.woff?bgfcy4') format('woff'),
+    url('../fonts/icomoon.svg?bgfcy4#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-equals:before {
+    content: "\e900";
+}
+.icon-forward:before {
+    content: "\e969";
+}
+.icon-users:before {
+    content: "\e972";
+}
+.icon-spinner11:before {
+    content: "\e984";
+}
+.icon-bug:before {
+    content: "\e999";
+}
+.icon-trophy:before {
+    content: "\e99e";
+}
+.icon-cross:before {
+    content: "\ea0f";
+}
+
 
 /* base */
 html {
-    font-size: 22px;
+    font-size: 18px;
+    color: #333333;
 }
 
 body {
@@ -18,10 +68,26 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+img {
+    max-width: 100%;
+}
+
 p {
     font-size: 1rem;
 }
 
+input:active,
+input:focus,
+button:active,
+button:focus {
+    outline: none;
+}
+
+::selection {
+    background: #8bccd9;
+}
+
+/* headings */
 .heading,
 h1, .h1,
 h2, .h2,
@@ -33,6 +99,8 @@ h6, .h6 {
     margin: 25px 0;
 }
 
+
+
 h4, .h4,
 h5, .h5,
 h6, .h6 {
@@ -40,50 +108,98 @@ h6, .h6 {
 }
 
 h1, .h1 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
 }
 
 h2, .h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
 }
 
 h3, .h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 h4, .h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 h5, .h5 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 h6, .h6 {
     font-size: 1rem;
 }
+.extra-large,
+.large-icons {
+    font-size: 4rem;
+}
 
 .small-heading {
     font-size: 1.6rem;
 }
+.large-text {
+    font-size: 1.2rem;
+}
 
-.text-left {
-    text-align: left;
+
+/* util */
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+
+img.thumbnail {
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+span.icon-bug {
+    color: #4ea1af;
+}
+
+span.icon-trophy {
+    color: #649935;
+}
+
+span.icon-users {
+    color: #8e318e;
+}
+
+/* text */
+
+@media screen and (min-width: 1024px) {
+    .text-left {
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
 }
 
 /*container*/
 .container {
-    max-width: 75%;
+    max-width: 1024px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .container-thin {
-    max-width: 65%;
+    max-width: 800px;
 }
 
 .container-wide {
-    max-width: 85%;
+    max-width: 1200px;
 }
 
 .container-full {
@@ -92,7 +208,7 @@ h6, .h6 {
 
 /*section*/
 .section {
-    padding: 5% 0;
+    padding: calc(5% + 25px) 0;
     text-align: center;
 }
 
@@ -101,17 +217,151 @@ h6, .h6 {
     padding: 0 0 20px 0;
     margin-top: 0;
     font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.frosted-bg h2.section-heading {
+    padding: 0;
 }
 
 section#section-1 {
-    background: #8360c3;
-    background-image: webkit-linear-gradient(to right, #8360c3, #2ebf91), url(../img/alaska.jpg);
-    background-image: linear-gradient(to right, rgba(63, 52, 84, .5), rgba(8, 82, 59, 0.5)), url(../img/alaska.jpg);
-    background-size: cover;
-    background-position: bottom center;
-    background-blend-mode: overlay;
-    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    section#section-1 {
+        padding: 0;
+    }
+
+    .frosted-bg {
+        padding: 60px 30px !important;
+    }
+}
+
+section#section-1:after {
+    content: '';
+    background: #8360c3;
+    background-image: -webkit-linear-gradient(to right, #8360c3, #2ebf91), url(../img/alaska-short-600.jpg);
+    background-image: linear-gradient(to right, rgba(63, 52, 84, .5), rgba(8, 82, 59, 0.5)), url(../img/alaska-short-600.jpg);
+    background-size:cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(2px);
+}
+
+@media screen and (min-width: 600px) {
+    section#section-1:after {
+
+        background-image: -webkit-linear-gradient(to right, #8360c3, #2ebf91), url(../img/alaska-short-1600.jpg);
+        background-image: linear-gradient(to right, rgba(63, 52, 84, .5), rgba(8, 82, 59, 0.5)), url(../img/alaska-short-1600.jpg);
+        /*background-size: 1600px;*/
+    }
+}
+@media screen and (min-width: 1024px) {
+    section#section-1:after {
+        background-size: 150vw;
+        background-position: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    section#section-1:after {
+
+        background-size: 125vw;
+
+        background-image: -webkit-linear-gradient(to right, #8360c3, #2ebf91), url(../img/alaska-short-2600.jpg);
+
+        background-image: linear-gradient(to right, rgba(63, 52, 84, .5), rgba(8, 82, 59, 0.5)), url(../img/alaska-short-2600.jpg);
+
+        /*background-size: 2600px;*/
+
+    }
+}
+
+@media screen and (min-width: 2600px) {
+    section#section-1:after {
+
+        background-size: 110vw;
+        background-image: -webkit-linear-gradient(to right, #8360c3, #2ebf91), url(../img/alaska-short.jpg);
+        background-image: linear-gradient(to right, rgba(63, 52, 84, .5), rgba(8, 82, 59, 0.5)), url(../img/alaska-short.jpg);
+        /*background-size: 110vw;*/
+    }
+
+}
+
+section#section-1 .frosted-bg:after {
+    content: '';
+    /*background-image: url(../img/alaska-short-600.jpg);*/
+    box-shadow: 0 0 0px 0 #000;
+    /* background-size: 600px; */
+    background-size:cover;
+    background-position: bottom;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    z-index: -2;
+    filter: blur(0px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+}
+
+@media screen and (min-width: 600px) {
+    section#section-1 .frosted-bg:after {
+        /* background-size: 1600px; */
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    section#section-1 .frosted-bg:after {
+        background-image: url(../img/alaska-short-1600.jpg);
+        background-size: 150vw;
+        background-position: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    section#section-1 .frosted-bg:after {
+        background-image: url(../img/alaska-short-2600.jpg);
+        /*background-size: 2600px;*/
+        background-size: 125vw;
+    }
+
+}
+
+@media screen and (min-width: 2600px) {
+    section#section-1 .frosted-bg:after {
+        background-image: url(../img/alaska-short.jpg);
+        background-size: 110vw;
+    }
+}
+
+.frosted-bg {
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+    z-index: 1;
+}
+
+.frosted-bg .container {
+    position: relative;
+    z-index: 1;
 }
 
 /*flex*/
@@ -129,7 +379,13 @@ section#section-1 {
     margin: 0 20px;
 }
 
-.container-full .flex-wrap [class*=flex-] {
+@media screen and (max-width: 1024px) {
+    .flex-stack {
+        flex-direction: column;
+    }
+}
+
+.container-full .flex-wrap [class*=flex-]:not([class=flex-1]) {
     margin: 0 50px;
 }
 
@@ -158,24 +414,24 @@ section#section-1 {
     flex-basis: calc((100% / 3 * 2) - 40px);
 }
 
-.container-full .flex-2-3 {
-    flex-basis: calc((100% / 3 * 2) - 100px);
-}
-
 .flex-1-4 {
     flex-basis: calc(100% / 4 - 40px);
-}
-
-.container-full .flex-1-4 {
-    flex-basis: calc(100% / 4 - 100px);
 }
 
 .flex-3-4 {
     flex-basis: calc(100% / 4 * 3 - 40px);
 }
 
-.container-full .flex-3-4 {
-    flex-basis: calc(100% / 4 * 3 - 100px);
+.flex-2-5 {
+    flex-basis: calc(100% / 5 * 2 - 40px);
+}
+
+.flex-3-5 {
+    flex-basis: calc(100% / 5 * 3 - 40px);
+}
+
+.flex-4-5 {
+    flex-basis: calc(100% / 5 * 4 - 40px);
 }
 
 /*content-box*/
@@ -184,18 +440,30 @@ section#section-1 {
     box-sizing: border-box;
 }
 
+.content-box h3, .content-box h4 {
+    margin: 10px 0;
+}
+
 .content-box.flex-1-3 {
     border: 1px solid #eee;
     background: #ffffff;
+    margin: 0 25px;
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, .35);
 }
 
 .content-box p:last-child {
     margin-bottom: 0;
 }
 
+.content-box p {
+    margin-top: 10px;
+}
+
 .container-full .content-box {
     padding: calc(1% + 20px);
 }
+
+
 
 /*backgrounds*/
 .bg-gradient-1 {
@@ -208,11 +476,91 @@ section#section-1 {
 .bg-gradient-2 {
     background: #D3CCE3; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, rgba(233, 228, 240, .1), rgba(211, 204, 227, .4)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(35deg, rgba(124, 32, 255, 0.15), rgba(211, 204, 227, .1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-gradient-3 {
     background: #2C3E50; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+}
+
+
+/*table*/
+
+div#table-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+
+div#table-content td + td {
+    padding: 20px 5px;
+    background: rgba(255, 255, 255, 0.3);
+    min-width: 185px;
+    box-sizing: border-box;
+}
+
+div#table-content th, div#table-content td:first-child {
+    font-weight: bold;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.075);
+}
+
+div#table-content th:first-child {
+    background: none;
+}
+
+div#table-generator input,
+div#table-generator button {
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    font-size: 26px;
+    line-height: 50px;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    transition: all .18s ease;
+}
+
+div#table-generator input.submit,
+div#table-generator button {
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+div#table-generator input.submit:hover,
+div#table-generator button:hover {
+    color: #4d9fac;
+    background: #fff;
+}
+
+div#table-generator input[type=number] {
+    width: 60px;
+}
+
+div#table-generator input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+div#table-generator input[type=number]::-webkit-inner-spin-button,
+div#table-generator input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+div#table-generator {
+    display: flex;
+    justify-content: center;
+}
+
+div#table-generator button span.icon-spinner11 {
+    font-size: 1rem;
+    vertical-align: initial;
+    padding-left: 5px;
+    cursor: pointer;
 }
