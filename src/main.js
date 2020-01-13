@@ -9,6 +9,11 @@ function generateTable() {
         genButton = document.getElementById('generate'),
         resetButton = document.getElementById('reset');
 
+    if(setCol === 1 || setRow === 1) {
+        resetTable();
+        return;
+    }
+
     parentElement.appendChild(table);
     table.innerHTML = "<thead><tr id='thead'></tr></thead><tbody id='tbody'></tbody>";
 
@@ -37,7 +42,7 @@ function generateTable() {
         tbody.appendChild(row);
     }
 
-    resetButton.style.display = "flex";
+    resetButton.style.opacity = 1;
 }
 
 function removeTable() {
@@ -51,7 +56,7 @@ function resetTable() {
         resetButton = document.getElementById('reset');
     tableElements.innerHTML = '<table class="init-table"><thead><tr>    <th></th>    <th>1</th>    <th>1</th>    <th>1</th>    <th>1</th></tr></thead><tbody><tr>    <td scope="row">1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td></tr><tr>    <td scope="row">1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td></tr><tr>    <td scope="row">1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td></tr><tr>    <td scope="row">1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td>    <td>1 x 1 = 1</td></tr></tbody>                 </table>';
 
-    resetButton.style.display = "none";
+    resetButton.style.opacity = .5;
 
 }
 
